@@ -106,7 +106,7 @@ int main()
     	  ground_truth.push_back(gt_values);
 
           //Call ProcessMeasurment(meas_package) for Kalman filter
-        cout<<"Meas package: type="<< meas_package.sensor_type_<<", data="<< meas_package.raw_measurements_ << endl;
+        // cout<<"Meas package: type="<< meas_package.sensor_type_<<", data="<< meas_package.raw_measurements_ << endl;
         // if (meas_package.sensor_type_ != 1) {
         //   std::string msg = "42[\"manual\",{}]";
         //   ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);

@@ -23,18 +23,18 @@ void KalmanFilter::Init(VectorXd &x_in, MatrixXd &P_in, MatrixXd &F_in,
 }
 
 void KalmanFilter::Predict() {
-  cout << "KalmanFilter::Predict" << std::endl;
+  // cout << "KalmanFilter::Predict" << std::endl;
   /**
     * predict the state
   */
   x_ = F_ * x_;
 	P_ = F_ * P_ * F_.transpose() + Q_;
 
-  cout << "Predicted x: " << x_ << std::endl;
+  // cout << "Predicted x: " << x_ << std::endl;
 }
 
 void KalmanFilter::Update(const VectorXd &z) {
-  cout << "KalmanFilter::Update" << std::endl;
+  // cout << "KalmanFilter::Update" << std::endl;
   /**
     * update the state by using Kalman Filter equations
   */
@@ -51,7 +51,7 @@ void KalmanFilter::Update(const VectorXd &z) {
 }
 
 void KalmanFilter::UpdateEKF(const VectorXd &z) {
-  cout << "KalmanFilter::UpdateEKF" << std::endl;
+  // cout << "KalmanFilter::UpdateEKF" << std::endl;
   /**
     * update the state by using Extended Kalman Filter equations
   */
@@ -72,7 +72,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     float sign = y(1) > 0 ? -1 : 1;
     int whole = abs((y(1) - sign*M_PI) / (2*M_PI));
     float new_phi = y(1) + sign*whole*2*M_PI;
-    cout << "phi in y: " << y(1) << ", adjusted to: "<< new_phi << std::endl;
+    // cout << "phi in y: " << y(1) << ", adjusted to: "<< new_phi << std::endl;
     y(1) = new_phi;
   }
 
